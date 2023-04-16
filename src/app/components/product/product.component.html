@@ -1,5 +1,6 @@
 <div class="border rounded flex-col items-center py-2 px-2 m-3">
-  <h2 class="text-lg text-center m-3">{{product.name}}</h2>
+  <h2 class="text-lg text-center mt-3">{{product.name}}</h2>
+  <h3 class="italic text-center mb-3">{{Category[product.category]}}</h3>
 
   <p>Description: {{product.description}}</p>
   <p class="mt-5">Price: <span class="font-bold">{{product.price | currency}}</span></p>

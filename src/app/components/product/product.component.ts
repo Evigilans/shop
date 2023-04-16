@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {IProduct} from "../../models/product";
+import {Category, IProduct} from "../../models/product";
 
 @Component({
   selector: 'app-product',
@@ -12,4 +12,6 @@ export class ProductComponent {
   onAddToCart() {
     console.log('Product added to cart')
   }
+
+  protected readonly Category = Category;
 }
