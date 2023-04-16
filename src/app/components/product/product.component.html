@@ -1,0 +1,19 @@
+<div class="border rounded flex-col items-center py-2 px-2 m-3">
+  <h2 class="text-lg text-center m-3">{{product.name}}</h2>
+
+  <p>Description: {{product.description}}</p>
+  <p class="mt-5">Price: <span class="font-bold">{{product.price | currency}}</span></p>
+
+  <div *ngIf="product.isAvailable; else outOfStock">
+    <button class="border rounded bg-green-500 p-2"
+            (click)="onAddToCart()"
+    >
+      Add to cart
+    </button>
+  </div>
+  <ng-template #outOfStock>
+    <button class="border rounded bg-red-500 text-white focus:outline-none disabled:opacity-40 p-2" disabled>
+      Out of stock
+    </button>
+  </ng-template>
+</div>
