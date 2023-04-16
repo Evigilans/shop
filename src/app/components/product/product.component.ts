@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Category, IProduct} from "../../models/product";
+import {CartService} from "../services/cart.service";
 
 @Component({
   selector: 'app-product',
@@ -9,9 +10,13 @@ import {Category, IProduct} from "../../models/product";
 export class ProductComponent {
   @Input() product: IProduct
 
-  onAddToCart() {
-    console.log('Product added to cart')
+  protected readonly Category = Category;
+
+  constructor(private cartService: CartService) {
   }
 
-  protected readonly Category = Category;
+  onAddToCart(product: IProduct) {
+    console.log('Product added to cart')
+    this.cartService.purchaseProduct(product);
+  }
 }
