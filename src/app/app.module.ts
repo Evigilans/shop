@@ -24,3 +24,5 @@ import { CartListComponent } from './components/cart-list/cart-list.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+// Если есть реализация, добавьте ее в мастер
+
